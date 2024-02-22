@@ -39,6 +39,9 @@
       
     <% end %>
 
+    
+    <%= form.text_field :user_id , type: "block", value: current_user.id %>
+
     <%= form.file_field :images, multiple:true%>
   </div>
 
