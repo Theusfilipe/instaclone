@@ -13,7 +13,16 @@
         <li class="nav-item">
           <%= link_to "About Page", home_about_path, class:"nav-link"%>
         </li>
-        
+
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Sign out", destroy_user_session_path, class:"nav-link"%>
+        </li>
+        <%else%>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class:"nav-link"%>
+        </li>
+        <%end%>
       </ul>
     </div>
   </div>
