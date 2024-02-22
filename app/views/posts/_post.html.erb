@@ -15,4 +15,7 @@
       <%= link_to "", post, class:"post-link" %>
   </p>
 
+  <% post.images.each do |image|%>
+    <%= image_tag(image, style:"object-fit: cover; width: 300px; height: 600px")%>
+  <%end%>
 </div>
