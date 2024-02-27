@@ -68,3 +68,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "followability", "~> 1.1"
+
+gem "ransack"

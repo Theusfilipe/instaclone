@@ -16,6 +16,10 @@ class User < ApplicationRecord
 
         before_create :randomize_id
 
+        def self.ransackable_attributes(auth_object = nil)
+          %w[bio created_at email id username] # Add any other attributes you want to be searchable
+        end
+
         def unfollow(user)
           followerable_relationships.where(followable_id: user.id).destroy_all
         end

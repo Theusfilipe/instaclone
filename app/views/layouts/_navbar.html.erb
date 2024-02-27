@@ -1,6 +1,15 @@
+<%= stylesheet_link_tag("navbar.css")%>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <%= link_to "Home", root_path, class: "navbar-brand", style: "magin-left: 15px;" %>
+
+    <%= form_with url: profiles_index_path, method: :get do |form|  %>
+      <%= form.search_field :query, value: params[:query], placeholder: "Search", class:"search-field" %>
+      <%form.submit "Search", class: "btn btn-primary"%>  
+    
+    <% end %>
+      
     <% if user_signed_in? && current_user.avatar.attached? %>
       <%= image_tag current_user.avatar, style: "width:50px; height:50px;" %>
     <% end %>
